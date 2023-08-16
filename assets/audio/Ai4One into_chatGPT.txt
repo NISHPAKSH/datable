@@ -1,0 +1,287 @@
+This is the logic for an app called "Ai4One" by Mekel Haunsby it simulates human voice by playing audiofiles
+
+The user adjusts sliders from 1 to 100 for different preferences, divided into 20 different aspects, 20 different tactics, and 10 different mindsets. 
+
+The top five aspects, tactics, and  mindsets are selected. In case of ties, the last value entered takes precedence.
+
+
+The application generates a "user program" consisting of 50 sets. The sequence of sets alternates between Set 1 and Set 2.
+
+Set Questions
+Each program consists of 25 unique Set 1 and Set 2 questions. These questions are created by combining the top five items from the user's aspect and tactic preferences (L1 and L2). The selected aspect (L1) and Tactic (L2) s do not vary within a set. 
+
+Transition questions are used when switching sets.
+
+When a set question is answered with "yes", the app checks for the presence of one of the top five mindsets by random but from the top five ranked using MXX_1 and MXX_2 if answred "yes" an additinal question is asked using the fitting MXX_3 or MXX_4. 
+
+
+This is the formular
+
+Set 1
+
+S1A+ L1S
+If yes then MXX_1 If yes then MXX_2
+If No, play one of the "NO" answers (NO1-NO40) and proceed to the next question.
+
+S1B_1+ L2O +S1B_2+L1S
+If yes then MXX_1 If yes then MXX_2
+If no then random NXX and next question
+
+S1C_1+ L2O+S1C_2+ L1S
+If yes then MXX_3 If yes then MXX_4
+If no then random NXX
+
+S1D+L1S
+If yes then MXX_3 If yes then MXX_4
+If no then random NXX
+
+Random transition (NQXX)
+Set 2
+S2A+L2O
+If yes then MXX_1 If yes then MXX_2
+
+S2B_1+ L1S+S2b_2+ L2O
+If yes then MXX_1 If yes then MXX_2
+
+S2C_1+L1S+SC2_2+L2O
+If yes then MXX_3 If yes then MXX_4
+
+S2D_1+L2O+S2D_2
+If yes then MXX_3 If yes then MXX_4
+
+Random transition (NQXX)
+
+New set etc...............
+
+	Aspects
+1	Health
+2	Property
+3	Home
+4	Career
+5	Children
+6	Sex
+7	Food & Drink
+8	Love
+9	Family
+10	Friends
+11	Politics
+12	People
+13	Animals
+14	Nature
+15	Energy
+16	Time
+17	Art
+18	Religion
+19	Soul
+20	Integrity
+	
+	Tactics
+21	Help
+22	Control
+23	Communication
+24	Understanding
+25	Agreement
+26	Empathy
+27	Persistance 
+28	Acceptance
+29	Creation 
+30	Honesty
+31	Improvement
+32	Change
+33	Attack
+34	Criticism
+35	Manipulation
+36	Lie
+37	Disregard
+38	Escape
+39	Surrender
+40	Ending
+	
+	Mindsets
+41	Knowing
+42	Curiosity
+43	Desire
+44	Need
+45	Demand
+46	Enforcement
+47	Inhibition
+48	Abscence
+49	Refusal
+50	Denial
+
+
+These are the names and content of audiofiles:
+MXX_:		Knowing:
+M41_1	All right,so	At that time, was something unknown?
+M41_2	Got it	I would like to acknowledge that there was something unknown at that time.
+M41_3	Okay. So	In this instance, is something unknown?
+M41_4	Got it	I would like to acknowledge that there is something unknown in this instance.
+		Curiosity:
+M42_1	Okay	At that time, was there something to be curious about?
+M42_2	Understood	Acknowledgement: I would like to acknowledge that there was something to be curious about at that time.
+M42_3	Okay, so	In this instance, is there something to be curious about?
+M42_4	Very well	Acknowledgement: I would like to acknowledge that in this instance there is something to be curious about.
+		Desire:
+M43_1	Okay	At that time, was something desired?
+M43_2	All right	I would like to acknowledge that there was something desired at that time.
+M43_3	Got it, so	In this instance, is something desired?
+M43_4	 I understand	I would like to acknowledge that in this instance there is something desired. 
+		Need:
+M44_1	I got it	At that time, was there something needed?
+M44_2	Allright, so	I would like to acknowledge that there was something needed at that time.
+M44_3
+	I see, so	In this case, is there something needed?
+M44_4	Very well	I would like to acknowledge that there is something needed in this case.
+		Demand:
+M45_1	Okay, so	At that time, was something demanded?
+M45_2	All right,so	I would like to acknowledge that there was something demanded at that time.
+M45_3	Got it	In this case, is there something demanded?
+M45_4	Okay. So	I would like to acknowledge that there is something demanded in this case.
+		Enforcement:
+M46_1	Hmm I understand	At that time, was something being enforced?
+M46_2	Okay	I would like to acknowledge that something was being enforced at that time.
+M46_3	Understood	About this, is there something being enforced?
+M46_4	Okay, so	I would like to acknowledge that there is something being enforced about this.
+		Inhibition:
+M47_1	Got it	At that time, was something restrained?
+M47_2	Okay	I would like to acknowledge that something was restrained at that time.
+M47_3	All right	Concerning this, is something being restrained?
+M47_4	Got it, so	I would like to acknowledge that there is something being restrained concerning this.
+		Absence:
+M48_1	Very well	At that time, was something missing?
+M48_2	I got it	I would like to acknowledge that something was missing at that time.
+M48_3	Allright, so	In this case, is something missing?
+M48_4	I see, so	I would like to acknowledge that something is missing in this case.
+		Refusal:
+M49_1	Very well	At that time, was something refused?
+M49_2	Okay, so	I would like to acknowledge that something was refused at that time.
+M49_3	All right,so	In this case, is something being refused?
+M49_4	Got it	I would like to acknowledge that something is being refused in this case.
+		Denial:
+M50_1	Got it	At that time, was something denied?
+M50_2	Okay. So	I would like to acknowledge that something was denied at that time.
+M50_3	Okay	In this instance, is something being denied?
+M50_4	Understood	I would like to acknowledge that something is being denied in this instance.
+
+L1S consist of these 20 different :		
+L1s01		"Stay healthy."
+L1s02		"Manage finances."
+L1s03		"Create a home."
+L1s04		"Find your career."
+L1s05		"Raise children."
+L1s06		"Maintain your sex life."
+L1s07		"Enjoy food and drink."
+L1s08		"Build love."
+L1s09		"Spend time with family."
+L1s10		"Be there for friends."
+L1s11		"Get involved socially."
+L1s12		"Expand your network."
+L1s13		"Care for animals."
+L1s14		"Experience nature."
+L1s15		"Manage your energy."
+L1s16		"Make the most of your time"
+L1s17		"Express creativity."
+L1s18		"Practice beliefs."
+L1s19		"Explore spirituality."
+L1s20		"Stay true to yourself."
+
+L2O:		
+L2_21		Help
+L2_22		Control
+L2_23		Communicate
+L2_24		Understand
+L2_25		Agree
+L2_26		Show empathy
+L2_27		Persist
+L2_28		Accept
+L2_29		Think creatively
+L2_30		Be honest
+L2_31		Improve
+L2_32		Change
+L2_33		Confront
+L2_34		Speak up
+L2_35		Make the most of circumstances
+L2_36		Twist truths
+L2_37		Ignore problems
+L2_38		Escape
+L2_39		Surrender
+L2_40		End something
+
+S1A	Do you recall a time when you had to
+S1B_1	Do you recall a time when you needed to really
+S1B_2	so you could
+S1C_1	Are you currently finding ways to
+S1C_2	so that you can
+S1D	When planning for the far future, do you envision your life in a way that allows you to
+	
+S2A	Have you ever been in a challenging situation where you needed to
+S2B_1	Has there been an instance when you trying to
+S2B_2	had to
+S2C_1	Are you right now in order to
+SC2_2	making a choice to
+S2D_1	When envisioning the far future, do you see yourself choosing to
+S2D_2	in order to handle problems?
+
+N01	Got it
+N02	Okay
+N03	I understand
+N04	Okay
+N05	Understood
+N06	Got it
+N07	Okay
+N08	All right
+N09	Very well
+N10	I got it
+N11	Allright
+N12	I see
+N13	Okay
+N14	All right
+N15	Got it
+N16	Okay. So
+N17	Okay
+N18	Understood
+N19	All right
+N20	Got it
+N21	I understand
+N22	Okay
+N23	Understood
+N24	Okay
+N25	Very well
+N26	Okay
+N27	All right
+N28	Got it
+N29	Allright
+N30	I see
+N31	Very well
+N32	Okay
+N33	I see
+N34	Okay
+N35	All right
+N36	Very well
+N37	Got it
+N38	I got it
+N39	Okay.
+N40	Got it
+
+Please simulate this app with these default settings: 
+
+Aspects
+Health - 90
+Career - 85
+Art - 80
+Energy - 75
+Integrity - 70
+
+Tactics:
+Help - 95
+Communication - 90
+Change - 85
+Acceptance - 80
+Improvement - 75
+
+Mindsets:
+Curiosity - 100
+Desire - 95
+Need - 90
+Absence - 85
+Enforcement - 80
